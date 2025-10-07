@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Application</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="/blog" class="logo">My Blog</a>
+      <ul class="nav-links">
+        <li><a href="/blog">Home</a></li>
+        <% if (locals.user) { %>
+          <li><a href="/blog/create">Create Post</a></li>
+          <li><span>Welcome, <%= user.username %>!</span></li>
+          <li><a href="/auth/logout" class="btn-logout">Logout</a></li>
+        <% } else { %>
+          <li><a href="/auth/login">Login</a></li>
+          <li><a href="/auth/register">Register</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </nav>
+  <main class="container">
