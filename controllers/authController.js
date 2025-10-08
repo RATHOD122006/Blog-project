@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const User = require('../models/User');
 
 exports.getRegister = (req, res) => {
   res.render('auth/register', { error: null });
